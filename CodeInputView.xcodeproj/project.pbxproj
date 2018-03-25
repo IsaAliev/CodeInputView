@@ -43,6 +43,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE111C872067E42E0003F670 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CE901F2A205AF32600C688DD /* CodeInputView.swift */,
+				CEBF4F4A2066881500D31600 /* LabelBasedInputField.swift */,
+				CEBF4F4C2066A2AD00D31600 /* DotInputField.swift */,
+				CEBF4F4E2066EFEC00D31600 /* InputableField.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		CE901F0C205AF28000C688DD = {
 			isa = PBXGroup;
 			children = (
@@ -68,10 +79,7 @@
 				CE901F1F205AF28000C688DD /* Assets.xcassets */,
 				CE901F21205AF28000C688DD /* LaunchScreen.storyboard */,
 				CE901F24205AF28000C688DD /* Info.plist */,
-				CE901F2A205AF32600C688DD /* CodeInputView.swift */,
-				CEBF4F4A2066881500D31600 /* LabelBasedInputField.swift */,
-				CEBF4F4C2066A2AD00D31600 /* DotInputField.swift */,
-				CEBF4F4E2066EFEC00D31600 /* InputableField.swift */,
+				CE111C872067E42E0003F670 /* Classes */,
 			);
 			path = CodeInputView;
 			sourceTree = "<group>";
