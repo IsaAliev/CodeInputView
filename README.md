@@ -2,6 +2,13 @@
 
 This view allows you to easily add code input to your application.
 
+You can:
+<ul>
+<li>Customise appearance of basic fields that are given out-of-the-box<\li>
+<li>Add your own field and just pass it to IACodeInputView<\li>
+<li>Specify any number of fields and moreover add them in run-time<\li>
+<\ul>
+        
 # How to install
 
 Drag files in Classes folder to your project
