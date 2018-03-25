@@ -1,5 +1,5 @@
 //
-//  CodeInputView.swift
+//  IACodeInputView.swift
 //  CodeInputView
 //
 //  Created by Isa Aliev on 15.03.18.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CodeInputView<T: InputableField>: UIView, UIKeyInput {
+class IACodeInputView<T: InputableField>: UIView, UIKeyInput {
     private var fields = [T]()
     private var currentIndex = 0
     var numberOfFields = 4 {

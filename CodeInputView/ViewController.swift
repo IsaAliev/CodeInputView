@@ -26,7 +26,7 @@ class ViewController: UIViewController {
             field.layer.borderColor = UIColor.black.cgColor
         }
         
-        let c = CodeInputView<LabelBasedInputField>()
+        let c = IACodeInputView<LabelBasedInputField>()
         c.numberOfFields = 10
         c.frame = CGRect(x: 0.0, y: 200.0, width: 375.0, height: 100.0)
         view.addSubview(c)
