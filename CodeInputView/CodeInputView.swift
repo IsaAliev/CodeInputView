@@ -9,14 +9,7 @@
 import Foundation
 import UIKit
 
-protocol InputableField {
-    func deleteValue()
-    func setValue(_ newValue: String)
-    func getValue() -> String
-    func isEmpty() -> Bool
-}
-
-class CodeInputView<T: InputableField&UIView>: UIView, UIKeyInput {
+class CodeInputView<T: InputableField>: UIView, UIKeyInput {
     private var fields = [T]()
     private var currentIndex = 0
     var numberOfFields = 4 {
@@ -40,6 +33,8 @@ class CodeInputView<T: InputableField&UIView>: UIView, UIKeyInput {
     }
     
     var keyboardType: UIKeyboardType = .numberPad
+    
+    var onCodeDidEnter: ((String) -> ())?
     
     private var sizeOfField: CGFloat {
         let frameWidth = frame.width
@@ -114,6 +109,12 @@ class CodeInputView<T: InputableField&UIView>: UIView, UIKeyInput {
         })
     }
     
+    func clear() {
+        fields.forEach({ $0.deleteValue() })
+        updateCode()
+        currentIndex = 0
+    }
+    
     func insertText(_ text: String) {
         guard currentIndex < fields.count else {
             return
@@ -136,6 +137,9 @@ class CodeInputView<T: InputableField&UIView>: UIView, UIKeyInput {
     
     private func updateCode() {
         code = fields.reduce("", { $0 + $1.getValue() })
+        if code.count == numberOfFields {
+            onCodeDidEnter?(code)
+        }
     }
 }
 

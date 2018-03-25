@@ -13,8 +13,9 @@
 		CE901F20205AF28000C688DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE901F1F205AF28000C688DD /* Assets.xcassets */; };
 		CE901F23205AF28000C688DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE901F21205AF28000C688DD /* LaunchScreen.storyboard */; };
 		CE901F2B205AF32600C688DD /* CodeInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE901F2A205AF32600C688DD /* CodeInputView.swift */; };
-		CEBF4F4B2066881500D31600 /* CodeInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF4F4A2066881500D31600 /* CodeInputField.swift */; };
+		CEBF4F4B2066881500D31600 /* LabelBasedInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF4F4A2066881500D31600 /* LabelBasedInputField.swift */; };
 		CEBF4F4D2066A2AD00D31600 /* DotInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF4F4C2066A2AD00D31600 /* DotInputField.swift */; };
+		CEBF4F4F2066EFEC00D31600 /* InputableField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF4F4E2066EFEC00D31600 /* InputableField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +27,9 @@
 		CE901F22205AF28000C688DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE901F24205AF28000C688DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE901F2A205AF32600C688DD /* CodeInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputView.swift; sourceTree = "<group>"; };
-		CEBF4F4A2066881500D31600 /* CodeInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputField.swift; sourceTree = "<group>"; };
+		CEBF4F4A2066881500D31600 /* LabelBasedInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelBasedInputField.swift; sourceTree = "<group>"; };
 		CEBF4F4C2066A2AD00D31600 /* DotInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotInputField.swift; sourceTree = "<group>"; };
+		CEBF4F4E2066EFEC00D31600 /* InputableField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputableField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +69,9 @@
 				CE901F21205AF28000C688DD /* LaunchScreen.storyboard */,
 				CE901F24205AF28000C688DD /* Info.plist */,
 				CE901F2A205AF32600C688DD /* CodeInputView.swift */,
-				CEBF4F4A2066881500D31600 /* CodeInputField.swift */,
+				CEBF4F4A2066881500D31600 /* LabelBasedInputField.swift */,
 				CEBF4F4C2066A2AD00D31600 /* DotInputField.swift */,
+				CEBF4F4E2066EFEC00D31600 /* InputableField.swift */,
 			);
 			path = CodeInputView;
 			sourceTree = "<group>";
@@ -148,8 +151,9 @@
 				CE901F2B205AF32600C688DD /* CodeInputView.swift in Sources */,
 				CEBF4F4D2066A2AD00D31600 /* DotInputField.swift in Sources */,
 				CE901F1B205AF28000C688DD /* ViewController.swift in Sources */,
-				CEBF4F4B2066881500D31600 /* CodeInputField.swift in Sources */,
+				CEBF4F4B2066881500D31600 /* LabelBasedInputField.swift in Sources */,
 				CE901F19205AF28000C688DD /* AppDelegate.swift in Sources */,
+				CEBF4F4F2066EFEC00D31600 /* InputableField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

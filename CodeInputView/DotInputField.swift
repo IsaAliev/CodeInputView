@@ -19,7 +19,7 @@ class DotInputField: UIView, InputableField {
     
     private var value: String?
     static var configuration: Configuration = Configuration()
-    
+
     var dotRect: CGRect {
         let size = DotInputField.configuration.dotSize
         return CGRect(x: (bounds.width - size) * 0.5,

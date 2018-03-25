@@ -9,30 +9,33 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CodeInputField.configuration.emptyStateBlock = { label in
-            label.backgroundColor = .gray
-            label.layer.cornerRadius = label.bounds.height / 2.0
-            label.layer.masksToBounds = true
-            label.textAlignment = .center
+        LabelBasedInputField.configuration?.initialAppearanceBlock = { field in
+            field.textAlignment = .center
+            field.backgroundColor = .white
+            field.textColor = .black
+            field.font = UIFont.systemFont(ofSize: 17.0, weight: .bold)
         }
         
-        CodeInputField.configuration.filledStateBlock = { label in
-            label.backgroundColor = .white
+        LabelBasedInputField.configuration?.onLayoutAppearanceBlock = { field in
+            field.layer.cornerRadius = field.bounds.height / 2
+            field.layer.masksToBounds = true
+            field.layer.borderWidth = 1.0
+            field.layer.borderColor = UIColor.black.cgColor
         }
         
-        
-        DotInputField.configuration.fillColor = .cyan
-        let c = CodeInputView<CodeInputField>()
-        c.frame = CGRect(x: 16.0, y: 200.0, width: 250.0, height: 100.0)
-        c.backgroundColor = .green
+        let c = CodeInputView<LabelBasedInputField>()
+        c.numberOfFields = 10
+        c.frame = CGRect(x: 0.0, y: 200.0, width: 375.0, height: 100.0)
         view.addSubview(c)
         c.becomeFirstResponder()
-                
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        c.onCodeDidEnter = { code in
+            print(code)
+            c.clear()
+        }
     }
 }
 
