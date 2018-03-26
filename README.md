@@ -7,7 +7,7 @@ You can:
 <li>Customise appearance of basic fields that are given out-of-the-box
 <li>Add your own field and just pass it to IACodeInputView
 <li>Specify any number of fields and moreover add them in run-time
-<\ul>
+
         
 # How to install
 
