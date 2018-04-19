@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol InputableField where Self: UIView {
+@objc public protocol InputableField where Self: UIView {
     func deleteValue()
     func setValue(_ newValue: String)
     func getValue() -> String

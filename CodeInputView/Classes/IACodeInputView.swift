@@ -9,32 +9,32 @@
 import Foundation
 import UIKit
 
-class IACodeInputView<T: InputableField>: UIView, UIKeyInput {
+open class IACodeInputView<T: InputableField>: UIView, UIKeyInput {
     private var fields = [T]()
     private var currentIndex = 0
-    var numberOfFields = 4 {
+    public var numberOfFields = 4 {
         didSet {
             configure()
             layoutSubviews()
         }
     }
     
-    var code = ""
-    var horizontalMargins: CGFloat = 8.0 {
+    public var code = ""
+    public var horizontalMargins: CGFloat = 8.0 {
         didSet {
             layoutSubviews()
         }
     }
     
-    var interFieldSpacing: CGFloat = 8.0 {
+    public var interFieldSpacing: CGFloat = 8.0 {
         didSet {
             layoutSubviews()
         }
     }
     
-    var keyboardType: UIKeyboardType = .numberPad
+    public var keyboardType: UIKeyboardType = .numberPad
     
-    var onCodeDidEnter: ((String) -> ())?
+    public var onCodeDidEnter: ((String) -> ())?
     
     private var sizeOfField: CGFloat {
         let frameWidth = frame.width
@@ -44,15 +44,15 @@ class IACodeInputView<T: InputableField>: UIView, UIKeyInput {
         return min(minBySides, (frameWidth - interFieldSpacing * CGFloat(fieldsCount - 1) - horizontalMargins * 2.0)/CGFloat(fieldsCount))
     }
     
-    override var canBecomeFirstResponder: Bool {
+    open override var canBecomeFirstResponder: Bool {
         return true
     }
     
-    var hasText: Bool {
+    public var hasText: Bool {
         return fields.filter({ !$0.isEmpty() }).count > 0
     }
     
-    override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
         
         configure()
@@ -64,13 +64,13 @@ class IACodeInputView<T: InputableField>: UIView, UIKeyInput {
         configure()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         configure()
     }
     
-    override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         
         layoutFields()
@@ -109,13 +109,13 @@ class IACodeInputView<T: InputableField>: UIView, UIKeyInput {
         })
     }
     
-    func clear() {
+    public func clear() {
         fields.forEach({ $0.deleteValue() })
         updateCode()
         currentIndex = 0
     }
     
-    func insertText(_ text: String) {
+    public func insertText(_ text: String) {
         guard currentIndex < fields.count else {
             return
         }
@@ -125,7 +125,7 @@ class IACodeInputView<T: InputableField>: UIView, UIKeyInput {
         updateCode()
     }
     
-    func deleteBackward() {
+    public func deleteBackward() {
         guard currentIndex > 0 else {
             return
         }
