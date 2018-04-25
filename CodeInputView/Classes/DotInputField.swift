@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DotInputField: UIView, InputableField {
+public class DotInputField: UIView, InputableField {
     struct Configuration {
         var dotSize: CGFloat = 15.0
         var fillColor = UIColor.black
@@ -49,32 +49,32 @@ class DotInputField: UIView, InputableField {
         layer.addSublayer(strokeLayer)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         
         strokeLayer.path = circlePath.cgPath
         strokeLayer.frame = layer.bounds
     }
     
-    func deleteValue() {
+    public func deleteValue() {
         strokeLayer.fillColor = DotInputField.configuration.emptyColor.cgColor
         value = ""
     }
     
-    func setValue(_ newValue: String) {
+    public func setValue(_ newValue: String) {
         strokeLayer.fillColor = DotInputField.configuration.fillColor.cgColor
         value = newValue
     }
     
-    func getValue() -> String {
+    public func getValue() -> String {
         return value ?? ""
     }
     
-    func isEmpty() -> Bool {
+    public func isEmpty() -> Bool {
         return value == nil
     }
 }

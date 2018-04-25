@@ -9,20 +9,20 @@
 import Foundation
 import UIKit
 
-class LabelBasedInputField: UILabel, InputableField {
-    struct Configuration {
-        typealias AppearanceBlock = (UILabel) -> ()
+public class LabelBasedInputField: UILabel, InputableField {
+    public struct Configuration {
+        public typealias AppearanceBlock = (UILabel) -> ()
         
-        var onLayoutAppearanceBlock: AppearanceBlock?
-        var initialAppearanceBlock: AppearanceBlock?
-        var emptyAppearanceBlock: AppearanceBlock?
-        var filledAppearanceBlock: AppearanceBlock?
+        public var onLayoutAppearanceBlock: AppearanceBlock?
+        public var initialAppearanceBlock: AppearanceBlock?
+        public var emptyAppearanceBlock: AppearanceBlock?
+        public var filledAppearanceBlock: AppearanceBlock?
     }
 
     
     private var value: String?
     
-    static var configuration: LabelBasedInputField.Configuration? = LabelBasedInputField.Configuration()
+    public static var configuration: LabelBasedInputField.Configuration? = LabelBasedInputField.Configuration()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,35 +30,35 @@ class LabelBasedInputField: UILabel, InputableField {
         LabelBasedInputField.configuration?.initialAppearanceBlock?(self)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         
         LabelBasedInputField.configuration?.onLayoutAppearanceBlock?(self)
     }
     
-    func deleteValue() {
+    public func deleteValue() {
         LabelBasedInputField.configuration?.initialAppearanceBlock?(self)
         LabelBasedInputField.configuration?.emptyAppearanceBlock?(self)
         value = ""
         text = nil
     }
     
-    func setValue(_ newValue: String) {
+    public func setValue(_ newValue: String) {
         LabelBasedInputField.configuration?.initialAppearanceBlock?(self)
         LabelBasedInputField.configuration?.filledAppearanceBlock?(self)
         value = newValue
         text = newValue
     }
     
-    func getValue() -> String {
+    public func getValue() -> String {
         return value ?? ""
     }
     
-    func isEmpty() -> Bool {
+    public func isEmpty() -> Bool {
         return value == nil
     }
 }
